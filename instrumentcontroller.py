@@ -197,9 +197,9 @@ class InstrumentController(QObject):
         freq_rf_values = ['0_5', '1', '2', '5', '10', '20', '50']
         pow_rf_values = ['1', '1_25', '1_5']
         pows = {
-            '1': -104,
-            '1_25': -102,
-            '1_5': -104,
+            '1': -106,
+            '1_25': -104,
+            '1_5': -102,
         }
 
         r"""
@@ -211,7 +211,7 @@ class InstrumentController(QObject):
 
         # gen_ref.send(f':OUTP:MOD:STAT OFF')
         gen_ref.send(f'SOUR:POW {ref_p}dbm')
-        gen_ref.send(f'SOUR:FREQ {ref_f}dbm')
+        gen_ref.send(f'SOUR:FREQ {ref_f}Hz')
         gen_ref.send(f'OUTP:STAT ON')
 
         # measurement
